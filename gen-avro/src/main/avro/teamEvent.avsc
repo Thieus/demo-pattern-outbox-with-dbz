@@ -1,0 +1,22 @@
+{
+  "type": "record",
+  "name": "TeamEvent",
+  "namespace": "com.mla.demo.avro",
+  "fields": [
+    { "name": "id", "type": "string" },
+    { "name": "name", "type": "string" },
+    { "name": "description", "type": ["null", "string"], "default": null },
+    { "name": "members", "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "MemberEvent",
+          "fields": [
+            { "name": "id", "type": "string" },
+            { "name": "name", "type": "string" }
+          ]
+        }
+      }
+    }
+  ]
+}
